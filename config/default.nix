@@ -1,6 +1,6 @@
 {
   # Import all your configuration modules here
-  imports = [ ./bufferline.nix ./treesitter.nix ./alpha.nix ./colorscheme.nix ./todo.nix ./lsp.nix ./telescope.nix ./which-key.nix ./nvim-cmp.nix ./format.nix ./git.nix ./ai.nix ./candy.nix ./indent.nix ./oil.nix ];
+  imports = [ ./bufferline.nix ./treesitter.nix ./alpha.nix ./colorscheme.nix ./todo.nix ./lsp.nix ./telescope.nix ./which-key.nix ./nvim-cmp.nix ./format.nix ./git.nix ./ai.nix ./candy.nix ./indent.nix ./oil.nix ./presence.nix ];
   globals = {
     mapleader = " ";
     maplocalheader = " ";
@@ -9,7 +9,7 @@
   opts = {
     number = true;
     mouse = "a";
-    
+
     updatetime = 250;
     timeoutlen = 300;
 
