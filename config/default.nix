@@ -1,6 +1,6 @@
 {
   # Import all your configuration modules here
-  imports = [ ./bufferline.nix ./treesitter.nix ./alpha.nix ./colorscheme.nix ./todo.nix ./lsp.nix ./telescope.nix ./which-key.nix ./nvim-cmp.nix ./format.nix ./git.nix ./ai.nix ./candy.nix ./indent.nix ./oil.nix ./presence.nix ];
+  imports = [ ./bufferline.nix ./treesitter.nix ./alpha.nix ./colorscheme.nix ./todo.nix ./lsp.nix ./telescope.nix ./which-key.nix ./nvim-cmp.nix ./format.nix ./git.nix ./ai.nix ./candy.nix ./indent.nix ./oil.nix ./presence.nix ./markdown.nix ./trouble.nix ];
   globals = {
     mapleader = " ";
     maplocalheader = " ";
