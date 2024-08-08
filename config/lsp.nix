@@ -106,6 +106,9 @@
       marksman = {
         enable = true;
       };
+      yamlls = {
+        enable = true;
+      };
 
       lua-ls = {
         enable = true;
