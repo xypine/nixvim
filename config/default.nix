@@ -22,4 +22,7 @@
       action = "<cmd>nohlsearch<CR>";
     }
   ];
+  performance = {
+    byteCompileLua.enable = true;
+  };
 }
