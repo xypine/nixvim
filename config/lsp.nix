@@ -14,6 +14,8 @@
     enable = true;
   };
 
+  plugins.crates-nvim.enable = true;
+
   extraPackages = with pkgs; [
     go
   ];
@@ -107,6 +109,10 @@
         enable = true;
       };
       yamlls = {
+        enable = true;
+      };
+      # For .toml files
+      taplo = {
         enable = true;
       };
 
