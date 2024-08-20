@@ -102,6 +102,9 @@
       tsserver = {
         enable = true;
       };
+      svelte = {
+        enable = true;
+      };
       nixd = {
         enable = true;
       };
