@@ -98,8 +98,8 @@
       # Some languages (like typscript) have entire language plugins that can be useful:
       #    `https://nix-community.github.io/nixvim/plugins/typescript-tools/index.html?highlight=typescript-tools#pluginstypescript-toolspackage`
       #
-      # But for many setups the LSP (`tsserver`) will work just fine
-      tsserver = {
+      # But for many setups the LSP (`ts-ls`) will work just fine
+      ts-ls = {
         enable = true;
       };
       svelte = {
