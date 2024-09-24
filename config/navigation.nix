@@ -18,6 +18,13 @@
       };
     }
     {
+      key = "<leader>hl";
+      action = "<CMD>HopLine<CR>";
+      options = {
+        desc = "Hop Line";
+      };
+    }
+    {
       key = "f";
       action.__raw = ''
         function()

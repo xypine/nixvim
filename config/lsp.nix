@@ -26,11 +26,14 @@
     # `neodev` configure Lua LSP for your Neovim config, runtime and plugins
     # used for completion, annotations, and signatures of Neovim apis
     neodev-nvim
+    # Allow customizing lsp settings per-directory using a .neoconf.json file
+    neoconf-nvim
   ];
 
   # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugi#extraconfigluapre
   extraConfigLuaPre = ''
     require('neodev').setup {}
+    require('neoconf').setup {}
   '';
 
   # https://nix-community.github.io/nixvim/NeovimOptions/autoGroups/index.html
