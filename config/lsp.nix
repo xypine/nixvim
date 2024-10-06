@@ -114,6 +114,9 @@
       marksman = {
         enable = true;
       };
+      jsonls = {
+        enable = true;
+      };
       yamlls = {
         enable = true;
       };
