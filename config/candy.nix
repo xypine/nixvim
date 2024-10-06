@@ -1,4 +1,5 @@
 {
+  plugins.web-devicons.enable = true;
   plugins.nvim-colorizer.enable = true;
   plugins.barbecue = {
     enable = true;
