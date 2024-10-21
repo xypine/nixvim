@@ -12,4 +12,12 @@
       };
     })
   ];
+  extraConfigLuaPre = ''
+    local token = vim.env.TESTAUSTIME_TOKEN
+    if token then
+      require('testaustime').setup({token=token})
+    else
+      print('TESTAUSTIME_TOKEN not set, skipping init')
+    end
+  '';
 }
