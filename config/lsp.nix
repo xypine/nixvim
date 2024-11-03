@@ -91,7 +91,7 @@
       pyright = {
         enable = true;
       };
-      rust-analyzer = {
+      rust_analyzer = {
         enable = true;
         installCargo = true;
         installRustc = true;
@@ -102,7 +102,7 @@
       #    `https://nix-community.github.io/nixvim/plugins/typescript-tools/index.html?highlight=typescript-tools#pluginstypescript-toolspackage`
       #
       # But for many setups the LSP (`ts-ls`) will work just fine
-      ts-ls = {
+      ts_ls = {
         enable = true;
       };
       svelte = {
@@ -125,7 +125,7 @@
         enable = true;
       };
 
-      lua-ls = {
+      lua_ls = {
         enable = true;
 
         # cmd = {
@@ -143,7 +143,7 @@
         };
       };
 
-      typos-lsp = {
+      typos_lsp = {
         enable = true;
       };
     };
@@ -174,7 +174,7 @@
       };
 
       extra = [
-        # Jump to the definition of the word under your cusor.
+        # Jump to the definition of the word under your cursor.
         #  This is where a variable was first declared, or where a function is defined, etc.
         #  To jump back, press <C-t>.
         {
@@ -279,7 +279,7 @@
     # This function gets run when an LSP attaches to a particular buffer.
     #   That is to say, every time a new file is opened that is associated with
     #   an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
-    #   function will be executred to configure the current buffer
+    #   function will be executed to configure the current buffer
     # NOTE: This is an example of an attribute that takes raw lua
     onAttach = ''
       -- NOTE: Remember that Lua is a real programming language, and as such it is possible
