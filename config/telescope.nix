@@ -36,7 +36,7 @@
             hidden = true;
           };
         };
-        defaults.path_display = "shorten";
+        defaults.path_display = ["smart"];
       };
       
 

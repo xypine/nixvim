@@ -2,8 +2,9 @@
   plugins.indent-o-matic.enable = true;
   plugins.intellitab.enable = true;
   opts = {
-    shiftwidth = 3;
-    tabstop = 3;
+    shiftwidth = 2;
+    tabstop = 2;
+    softtabstop = 2;
     expandtab = false;
   };
 }

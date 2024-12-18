@@ -9,10 +9,26 @@
   };
 
   # Useful status updates for LSP.
-  # https://nix-community.github.io/nixvim/plugins/fidget/index.html
   plugins.fidget = {
     enable = true;
   };
+  # https://nix-community.github.io/nixvim/plugins/noice/index.html
+  # plugins.noice = {
+  #   enable = true;
+  #   settings.lsp.override = {
+  #     "vim.lsp.util.convert_input_to_markdown_lines" = true;
+  #     "vim.lsp.util.stylize_markdown" = true;
+  #     "cmp.entry.get_documentation" = true;
+  #   };
+  #   settings.presets = {
+  #     bottom_search = true;
+  #     command_palette = true;
+  #     long_message_to_split = true;
+  #     inc_rename = false;
+  #     lsp_doc_border = false;
+  #   };
+  # };
+  plugins.notify.enable = true;
 
   plugins.crates-nvim.enable = true;
 
