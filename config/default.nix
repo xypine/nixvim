@@ -9,7 +9,7 @@
     ./lsp.nix
     ./telescope.nix
     ./which-key.nix 
-    ./nvim-cmp.nix 
+    #./nvim-cmp.nix 
     ./format.nix 
     ./git.nix 
     ./ai.nix 
