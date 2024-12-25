@@ -25,6 +25,7 @@
         preset = "default";
         "<Tab>" = [
           "select_and_accept"
+          "fallback"
         ];
       };
       trigger = {
@@ -57,7 +58,7 @@
   # };
   plugins.notify.enable = true;
 
-  plugins.crates-nvim.enable = true;
+  plugins.crates.enable = true;
 
   extraPackages = with pkgs; [
     go
