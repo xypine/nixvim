@@ -7,6 +7,7 @@
   # plugins.cmp-nvim-lsp = {
   #   enable = true;
   # };
+  plugins.friendly-snippets.enable = true;
   plugins.blink-cmp = {
     enable = true;
     settings = {
