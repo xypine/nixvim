@@ -38,6 +38,9 @@
     timeoutlen = 300;
 
     hlsearch = true;
+
+    list = true;
+    listchars = "tab:␋\ ,trail:␠,precedes:«,extends:»,eol:␤";
   };
   keymaps = [
     {
