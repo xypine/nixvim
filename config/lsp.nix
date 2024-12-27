@@ -11,16 +11,11 @@
   plugins.blink-cmp = {
     enable = true;
     settings = {
-      accept = {
-        auto_brackets = {
-          enabled = true;
-        };
-      };
-      windows.documentation = {
+      # Show function signature while typing parameters
+      signature = { enabled = true; };
+      completion.documentation = {
         auto_show = true;
-      };
-      highlight = {
-        use_nvim_cmp_as_default = true;
+        auto_show_delay_ms = 500;
       };
       keymap = {
         preset = "default";
@@ -28,11 +23,6 @@
           "select_and_accept"
           "fallback"
         ];
-      };
-      trigger = {
-        signature_help = {
-          enabled = true;
-        };
       };
     };
   };

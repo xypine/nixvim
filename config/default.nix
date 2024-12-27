@@ -20,7 +20,7 @@
     ./presence.nix 
     ./markdown.nix 
     ./trouble.nix 
-    ./testaustime.nix 
+    # ./testaustime.nix 
     ./undo.nix 
     ./navigation.nix 
     ./hex.nix 
