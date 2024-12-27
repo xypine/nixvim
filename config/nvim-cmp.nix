@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   # Dependencies
@@ -107,7 +112,7 @@
         #    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       };
 
-      # WARNING: If plugins.cmp.autoEnableSources Nixivm will automatically enable the 
+      # WARNING: If plugins.cmp.autoEnableSources Nixivm will automatically enable the
       # corresponding source plugins. This will work only when this option is set to a list.
       # If you use a raw lua string, you will need to explicitly enable the relevant source
       # plugins in your nixvim configuration.

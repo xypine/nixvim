@@ -4,7 +4,9 @@
     {
       key = "<leader><F5>";
       action = "<cmd>UndotreeToggle<cr>";
-      options = { desc = "Toggle Undo Tree"; };
+      options = {
+        desc = "Toggle Undo Tree";
+      };
     }
   ];
 }

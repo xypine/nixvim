@@ -1,4 +1,7 @@
-{ config, pkgs, inputs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   # Dependencies
@@ -12,10 +15,19 @@
     enable = true;
     settings = {
       # Show function signature while typing parameters
-      signature = { enabled = true; };
-      completion.documentation = {
-        auto_show = true;
-        auto_show_delay_ms = 500;
+      signature = {
+        enabled = true;
+      };
+      completion = {
+        menu = {
+          auto_show.__raw = ''
+            function(ctx) return ctx.mode ~= 'cmdline' end
+          '';
+        };
+        documentation = {
+          auto_show = true;
+          auto_show_delay_ms = 500;
+        };
       };
       keymap = {
         preset = "default";
@@ -23,9 +35,22 @@
           "select_and_accept"
           "fallback"
         ];
+        cmdline = {
+          preset = "enter";
+          "<Tab>" = [
+            "select_next"
+            "fallback"
+          ];
+          "<S-Tab>" = [
+            "select_prev"
+            "fallback"
+          ];
+        };
       };
     };
   };
+  # Let blink-cmp impersonate nvim-cmp
+  plugins.blink-compat.enable = true;
 
   # Useful status updates for LSP.
   plugins.fidget = {
@@ -55,7 +80,7 @@
     go
   ];
 
-  # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugi#extraplugins 
+  # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugi#extraplugins
   extraPlugins = with pkgs.vimPlugins; [
     # NOTE: This is how you would ad a vim plugin that is not implemented in Nixvim, also see extraConfigLuaPre below
     # `neodev` configure Lua LSP for your Neovim config, runtime and plugins

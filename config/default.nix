@@ -1,29 +1,29 @@
 {
   # Import all your configuration modules here
-  imports = [ 
+  imports = [
     ./bufferline.nix
-    ./treesitter.nix 
-    ./alpha.nix 
+    ./treesitter.nix
+    ./alpha.nix
     ./colorscheme.nix
     ./todo.nix
     ./lsp.nix
     ./telescope.nix
-    ./which-key.nix 
-    #./nvim-cmp.nix 
-    ./format.nix 
-    ./git.nix 
-    ./ai.nix 
-    ./http.nix 
-    ./candy.nix 
-    ./indent.nix 
-    ./oil.nix 
-    ./presence.nix 
-    ./markdown.nix 
-    ./trouble.nix 
-    # ./testaustime.nix 
-    ./undo.nix 
-    ./navigation.nix 
-    ./hex.nix 
+    ./which-key.nix
+    #./nvim-cmp.nix
+    ./format.nix
+    ./git.nix
+    ./ai.nix
+    ./http.nix
+    ./candy.nix
+    ./indent.nix
+    ./oil.nix
+    ./presence.nix
+    ./markdown.nix
+    ./trouble.nix
+    # ./testaustime.nix
+    ./undo.nix
+    ./navigation.nix
+    ./hex.nix
   ];
   globals = {
     mapleader = " ";
