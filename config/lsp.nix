@@ -79,7 +79,7 @@
   extraConfigLuaPre = ''
     require('neodev').setup {}
     require('neoconf').setup {}
-    # Hotfix for "server cancelled request"
+    -- Hotfix for "server cancelled request"
     for _, method in ipairs({ "textDocument/diagnostic", "workspace/diagnostic" }) do
         local default_diagnostic_handler = vim.lsp.handlers[method]
         vim.lsp.handlers[method] = function(err, result, context, config)
