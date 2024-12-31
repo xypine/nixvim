@@ -1,4 +1,12 @@
 {
+  pkgs,
+  ...
+}:
+
+{
+  extraPackages = with pkgs; [
+    bash # Not included in blank docker environments
+  ];
   # Import all your configuration modules here
   imports = [
     ./bufferline.nix
