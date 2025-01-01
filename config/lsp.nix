@@ -184,6 +184,11 @@
       nixd = {
         enable = true;
       };
+      # Haskell
+      hls = {
+        enable = true;
+        installGhc = true;
+      };
       marksman = {
         enable = true;
       };
