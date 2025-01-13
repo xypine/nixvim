@@ -47,6 +47,10 @@ jobs:
           nix build .#dockerImage
 
       #
+      - name: Report free disk space
+        run: df -h
+
+      #
       - name: Push docker image to DockerHub
         run: |
           docker load < result
