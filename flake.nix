@@ -31,6 +31,19 @@
             };
           };
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
+          dockerImage = pkgs.dockerTools.buildImage {
+            name = "nixvim";
+            tag = "latest";
+
+            copyToRoot = pkgs.buildEnv {
+              name = "nvim-env";
+              paths = [ nvim ];
+            };
+
+            config = {
+              Cmd = [ "nvim" ]; # Set the default command for the container
+            };
+          };
         in
         {
           checks = {
@@ -41,6 +54,7 @@
           packages = {
             # Lets you run `nix run .` to start nixvim
             default = nvim;
+            dockerImage = dockerImage;
           };
         };
     };
