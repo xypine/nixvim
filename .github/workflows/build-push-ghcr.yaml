@@ -44,7 +44,7 @@ jobs:
       #
       - name: Build docker image
         run: |
-          nix build .#dockerImage
+          nix build .#dockerImage --out-link result.tar.gz
 
       #
       - name: Report free disk space
@@ -56,7 +56,7 @@ jobs:
           nix run github:nixos/nixpkgs#oras -- \
             push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest \
             --artifact-type application/vnd.docker.container.image.v1+json \
-            ./result.tar
+            ./result.tar.gz
 
       #
       - name: Generate artifact attestation
