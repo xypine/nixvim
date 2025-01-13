@@ -52,16 +52,8 @@ jobs:
 
       #
       - name: Use ORAS via Flakes
-        run: |
+        run: |-
           nix run github:nixos/nixpkgs#oras -- \
             push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest \
             --artifact-type application/vnd.docker.container.image.v1+json \
             ./result.tar.gz
-
-      #
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@v2
-        with:
-          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-          subject-digest: ${{ steps.push.outputs.digest }}
-          push-to-registry: true
