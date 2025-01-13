@@ -33,13 +33,13 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       #
-      - name: Report free disk space
-        run: df -h
-
-      #
       - uses: cachix/install-nix-action@v27
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      #
+      - name: Report free disk space
+        run: df -h
 
       #
       - name: Build docker image
