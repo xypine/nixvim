@@ -36,6 +36,8 @@ jobs:
       - uses: cachix/install-nix-action@v27
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install ORAS using Nix
+        run: nix-env -iA nixpkgs.oras
 
       #
       - name: Report free disk space
@@ -51,10 +53,11 @@ jobs:
         run: df -h
 
       #
-      - name: Push docker image to DockerHub
+      - name: Push Docker image directly using ORAS
         run: |
-          docker load < result
-          docker push --all-tags ghcr.io/${{ github.repository }}
+          oras push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest \
+            --artifact-type application/vnd.docker.container.image.v1+json \
+            ./result.tar
 
       #
       - name: Generate artifact attestation
