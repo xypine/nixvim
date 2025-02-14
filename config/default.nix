@@ -15,6 +15,7 @@
     ./ai.nix
     ./http.nix
     ./candy.nix
+    ./scrollbar.nix
     ./indent.nix
     ./oil.nix
     ./presence.nix
