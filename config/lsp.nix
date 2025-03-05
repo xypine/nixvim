@@ -29,23 +29,18 @@
           auto_show_delay_ms = 500;
         };
       };
+      cmdline.keymap = {
+        "<Tab>" = [
+          "select_and_accept"
+          "fallback"
+        ];
+      };
       keymap = {
         preset = "default";
         "<Tab>" = [
           "select_and_accept"
           "fallback"
         ];
-        cmdline = {
-          preset = "enter";
-          "<Tab>" = [
-            "select_next"
-            "fallback"
-          ];
-          "<S-Tab>" = [
-            "select_prev"
-            "fallback"
-          ];
-        };
       };
     };
   };
