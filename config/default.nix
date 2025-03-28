@@ -42,6 +42,9 @@
 
     list = true;
     listchars = "tab:␋\ ,trail:␠,precedes:«,extends:»";
+
+    cursorline = true;
+    cursorlineopt = "number";
   };
   keymaps = [
     {

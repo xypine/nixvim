@@ -54,6 +54,14 @@
   # Useful status updates for LSP.
   plugins.fidget = {
     enable = true;
+    settings = {
+      notification = {
+        window = {
+          winblend = 0;
+          border = "single";
+        };
+      };
+    };
   };
   # https://nix-community.github.io/nixvim/plugins/noice/index.html
   # plugins.noice = {
