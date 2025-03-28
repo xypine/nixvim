@@ -19,21 +19,25 @@
         enabled = true;
       };
       completion = {
+        ghost_text = {
+          enabled = true;
+          show_with_menu = false;
+        };
         menu = {
-          auto_show.__raw = ''
-            function(ctx) return ctx.mode ~= 'cmdline' end
-          '';
+          auto_show = false;
         };
         documentation = {
           auto_show = true;
           auto_show_delay_ms = 500;
         };
       };
-      cmdline.keymap = {
-        "<Tab>" = [
-          "select_and_accept"
-          "fallback"
-        ];
+      cmdline = {
+        keymap = {
+          "<Tab>" = [
+            "select_and_accept"
+            "fallback"
+          ];
+        };
       };
       keymap = {
         preset = "default";

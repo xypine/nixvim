@@ -41,7 +41,7 @@
     hlsearch = true;
 
     list = true;
-    listchars = "tab:␋\ ,trail:␠,precedes:«,extends:»,eol:␤";
+    listchars = "tab:␋\ ,trail:␠,precedes:«,extends:»";
   };
   keymaps = [
     {
