@@ -58,7 +58,6 @@
       notification = {
         window = {
           winblend = 0;
-          border = "single";
         };
       };
     };
