@@ -44,6 +44,8 @@
 
     cursorline = true;
     cursorlineopt = "number";
+
+    scrolloff = 8;
   };
   keymaps = [
     {
