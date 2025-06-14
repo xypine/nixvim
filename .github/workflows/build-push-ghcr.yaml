@@ -38,8 +38,8 @@ jobs:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
       #
-      - name: Report free disk space
-        run: df -h
+      - name: Free Runner Disk Space
+        uses: jlumbroso/free-disk-space@main
 
       #
       - name: Build docker image
