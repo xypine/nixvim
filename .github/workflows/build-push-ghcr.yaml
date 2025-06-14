@@ -69,9 +69,9 @@ jobs:
           docker load < result.tar.gz
           IMAGE_ID=$(docker load < result.tar.gz | grep "Loaded image:" | head -n1 | awk '{print $3}')
 
-          # Tag and push all tags from metadata
-          for tag in ${{ steps.meta.outputs.tags }}; do
+          # Convert newline-separated tags to array
+          while IFS= read -r tag; do
             echo "pushing $IMAGE_ID as $tag"
             docker tag "$IMAGE_ID" "$tag"
             docker push "$tag"
-          done
+          done <<< "${{ steps.meta.outputs.tags }}"
