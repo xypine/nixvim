@@ -24,6 +24,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      # Automatically generate tags and labels
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=latest,enable={{is_default_branch}}
+
       #
       - name: Login to ghcr
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
@@ -51,9 +64,14 @@ jobs:
         run: df -h
 
       #
-      - name: Use ORAS via Flakes
+      - name: Load and push image
         run: |-
-          nix run github:nixos/nixpkgs#oras -- \
-            push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest \
-            --artifact-type application/vnd.docker.container.image.v1+json \
-            ./result.tar.gz
+          docker load < result.tar.gz
+          IMAGE_ID=$(docker load < result.tar.gz | grep "Loaded image:" | head -n1 | awk '{print $3}')
+
+          # Tag and push all tags from metadata
+          for tag in ${{ steps.meta.outputs.tags }}; do
+            echo "pushing $IMAGE_ID as $tag"
+            docker tag "$IMAGE_ID" "$tag"
+            docker push "$tag"
+          done
