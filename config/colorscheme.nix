@@ -26,9 +26,9 @@
         background_color = nil,   -- set color for float backgrounds. If nil, uses the default color set
                                   -- by the color scheme
       },
-      signs = {
-        highlight = true,         -- whether to highlight signs
-      },
+      -- signs = {
+      --   highlight = true,         -- whether to highlight signs
+      -- },
       customize = nil,            -- customize the theme in any way you desire, see below what this
                                   -- configuration accepts
     })
