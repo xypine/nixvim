@@ -37,11 +37,57 @@
 
             copyToRoot = pkgs.buildEnv {
               name = "nvim-env";
-              paths = [ nvim ];
+              paths = with pkgs; [
+                # The main package
+                nvim
+                # C compiler for treesitter
+                zig
+                # various basic utils
+                bashInteractive
+                uutils-coreutils-noprefix
+                git
+                gnugrep
+                gnused
+                gawk
+                findutils
+                which
+                curl
+                cacert
+                less
+                gnutar
+                gzip
+                # some additional niceties
+                ripgrep
+                fd
+              ];
             };
+            runAsRoot = ''
+              #!${pkgs.runtimeShell}
+              mkdir -p /tmp
+              chmod 1777 /tmp
 
+              mkdir -p /home/nvim/.local/share/nvim
+              mkdir -p /home/nvim/.local/state/nvim
+              mkdir -p /home/nvim/.cache/nvim
+              mkdir -p /home/nvim/.config/nvim
+
+              # Make everything in /home/nvim writable
+              chmod -R 777 /home/nvim
+            '';
             config = {
               Cmd = [ "nvim" ]; # Set the default command for the container
+              Env = [
+                "SHELL=/bin/bash"
+                "PATH=/bin:/usr/bin"
+                "HOME=/home/nvim"
+                "XDG_DATA_HOME=/home/nvim/.local/share"
+                "XDG_STATE_HOME=/home/nvim/.local/state"
+                "XDG_CACHE_HOME=/home/nvim/.cache"
+                "XDG_CONFIG_HOME=/home/nvim/.config"
+                "SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+                "NIX_SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+              ];
+              WorkingDir = "/home/nvim";
             };
           };
         in
