@@ -22,7 +22,6 @@
     ./trouble.nix
     # ./testaustime.nix
     ./undo.nix
-    ./navigation.nix
     ./hex.nix
   ];
   globals = {
