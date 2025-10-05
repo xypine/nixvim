@@ -102,16 +102,6 @@
   extraConfigLuaPre = ''
     require('neodev').setup {}
     require('neoconf').setup {}
-    -- Hotfix for "server cancelled request"
-    for _, method in ipairs({ "textDocument/diagnostic", "workspace/diagnostic" }) do
-        local default_diagnostic_handler = vim.lsp.handlers[method]
-        vim.lsp.handlers[method] = function(err, result, context, config)
-            if err ~= nil and err.code == -32802 then
-                return
-            end
-            return default_diagnostic_handler(err, result, context, config)
-        end
-    end
   '';
 
   # https://nix-community.github.io/nixvim/NeovimOptions/autoGroups/index.html
@@ -177,7 +167,7 @@
 
       # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
       #
-      # Some languages (like typscript) have entire language plugins that can be useful:
+      # Some languages (like typescript) have entire language plugins that can be useful:
       #    `https://nix-community.github.io/nixvim/plugins/typescript-tools/index.html?highlight=typescript-tools#pluginstypescript-toolspackage`
       #
       # But for many setups the LSP (`ts-ls`) will work just fine
@@ -191,6 +181,9 @@
         enable = true;
       };
       nixd = {
+        enable = true;
+      };
+      gleam = {
         enable = true;
       };
       # Haskell
