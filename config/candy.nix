@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   plugins.web-devicons.enable = true;
   plugins.colorizer.enable = true;
@@ -18,4 +20,7 @@
       };
     };
   };
+  extraPlugins = with pkgs.vimPlugins; [
+    quick-scope
+  ];
 }

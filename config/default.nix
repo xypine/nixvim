@@ -20,6 +20,7 @@
     ./presence.nix
     ./markdown.nix
     ./trouble.nix
+    ./quickscope.nix
     # ./testaustime.nix
     ./undo.nix
     ./hex.nix
