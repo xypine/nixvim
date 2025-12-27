@@ -60,6 +60,7 @@
         nix = [ "nixfmt" ];
         rust = [ "rustfmt" ];
         yaml = [ "yamlfix" ];
+        gleam = [ "gleam format" ];
         "_" = [
           "squeeze_blanks"
           "trim_whitespace"
@@ -77,5 +78,6 @@
     nixfmt-rfc-style
     yamlfix
     rustfmt
+    gleam
   ];
 }
