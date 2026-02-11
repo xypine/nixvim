@@ -61,6 +61,8 @@
         rust = [ "rustfmt" ];
         yaml = [ "yamlfix" ];
         gleam = [ "gleam format" ];
+        c = [ "clang_format" ];
+        cpp = [ "clang_format" ];
         "_" = [
           "squeeze_blanks"
           "trim_whitespace"
