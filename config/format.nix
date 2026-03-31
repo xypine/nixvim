@@ -77,7 +77,7 @@
     nodePackages.prettier
     prettierd
     stylua
-    nixfmt-rfc-style
+    nixfmt
     yamlfix
     rustfmt
     gleam
