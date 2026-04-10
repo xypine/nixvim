@@ -74,7 +74,7 @@
   extraPackages = with pkgs; [
     black
     pylint
-    nodePackages.prettier
+    prettier
     prettierd
     stylua
     nixfmt
