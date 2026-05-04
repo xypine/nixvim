@@ -17,7 +17,7 @@
     ./scrollbar.nix
     ./indent.nix
     ./oil.nix
-    ./presence.nix
+    # ./presence.nix
     ./markdown.nix
     ./trouble.nix
     ./quickscope.nix
